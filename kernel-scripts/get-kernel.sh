@@ -25,9 +25,5 @@ fi
 
 # The next steps are all done in sequence so that if one step fails, it stops.
 # Get source and sign file, decompress source, verify signature, untar source, delete downloads.
-# echo -e "\n*** Downloading kernel source and signature file" && wget $KURL && wget $KSURL && echo -e "\n*** Decompressing kernel source"  && unxz -v $KXZFILE && echo -e "\n*** Verifying source"  && gpg2 --verify $KSFILE && echo -e "\n*** Untarring source"  && tar xf $KTFILE && echo -e "\n*** Cleaning up"  && rm $KTFILE $KSFILE && echo -e "\n*** Done"
-echo $KVERSION
-echo $KSERIES
-echo $KURL
-
+echo -e "\n*** Downloading kernel source and signature file" && wget $KURL && wget $KSURL && echo -e "\n*** Decompressing kernel source"  && unxz -v $KXZFILE && echo -e "\n*** Verifying source"  && gpg2 --verify $KSFILE && echo -e "\n*** Untarring source"  && tar xf $KTFILE && echo -e "\n*** Cleaning up"  && rm $KTFILE $KSFILE && echo -e "\n*** Done"
 exit 0
